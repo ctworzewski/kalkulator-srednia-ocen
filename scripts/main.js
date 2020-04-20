@@ -8,7 +8,6 @@ function suma() {
     let $showValue = document.querySelector('.showValue');
 
     // wyśweietlenie konkretnego inputa (wartość oceny)
-    $showValue.textContent = $inputs[0].value;
 
     // console.log($input[0].value);
     let temp = 0;
@@ -17,13 +16,20 @@ function suma() {
         console.log(temp);
 
         // console.log($input[i].value);
+
     }
+
+    // wyświetlenie sumy ocen
+    $showValue.textContent = temp;
+
+
+
     /*   let suma = 0;
-    $inputs.forEach((item) => {
-        suma = suma + Number(item.value);
-        console.log(">>" + suma);
-    });
- */
+        $inputs.forEach((item) => {
+            suma = suma + Number(item.value);
+            console.log(">>" + suma);
+        });
+        */
 }
 
 
