@@ -3,10 +3,7 @@ let $btnAverage = document.querySelector('.average');
 function validation($inputs) {
     $inputs.forEach(element => {
         if (element.value < 1 || element.value > 6) {
-            //alert('Jebnij się w czółko');
-
             element.style.border = '1px solid red';
-            //element.style.margin = '10px';
             element.style.width = '200px'
             element.placeholder = 'podaj ocenę!';
         } else {
