@@ -7,6 +7,8 @@ function validation($inputs) {
 
             element.style.border = '1px solid red';
             //element.style.margin = '10px';
+            element.style.width = '200px'
+            element.placeholder = 'podaj ocenę!';
         } else {
             element.style.border = '1px solid green';
         }
