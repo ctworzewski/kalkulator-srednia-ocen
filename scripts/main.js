@@ -1,56 +1,28 @@
-console.log('Działa');
-
-let $average = document.querySelector('.average');
+let $btnAverage = document.querySelector('.average');
 
 function suma() {
     // lista inputów, lista wpisanych ocen
     let $inputs = document.querySelectorAll('.poleOceny');
     let $showValue = document.querySelector('.showValue');
-
+    let $displayAverage = document.querySelector('.displayAverage');
     // wyśweietlenie konkretnego inputa (wartość oceny)
 
-    // console.log($input[0].value);
-    let temp = 0;
+    let suma = 0;
     for (let i = 0; i < $inputs.length; i++) {
-        temp = temp + Number($inputs[i].value);
-        console.log(temp);
-
-        // console.log($input[i].value);
-
+        suma = suma + Number($inputs[i].value);
     }
 
-    // wyświetlenie sumy ocen
-    $showValue.textContent = temp;
-
-
-
     /*   let suma = 0;
-        $inputs.forEach((item) => {
-            suma = suma + Number(item.value);
-            console.log(">>" + suma);
-        });
-        */
+    $inputs.forEach((item) => {
+        suma = suma + Number(item.value);
+        console.log(">>" + suma);
+    });
+    */
+
+    $showValue.textContent = suma;
+    let average = suma / $inputs.length;
+    $displayAverage.innerHTML = `<b>${average}</b>`
+    return average;
 }
-
-
-// ciało programu, w nie będa wywoływane poszczególne funkcje
-function setup() {
-    console.log('Funkcja setup');
-    suma();
-}
-
-
 // po kliknięciu w przycisk startuje funkcja setup
-$average.addEventListener('click', setup);
-
-
-// referencja do li
-
-/* 
-
- if (value >=1 || value <=6)  {
-    oblicz srednia
-}
-
-
-*/
+$btnAverage.addEventListener('click', suma);
