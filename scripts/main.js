@@ -1,11 +1,25 @@
 let $btnAverage = document.querySelector('.average');
 
+function validation($inputs) {
+    $inputs.forEach(element => {
+        if (element.value < 1 || element.value > 6) {
+            //alert('Jebnij się w czółko');
+
+            element.style.border = '1px solid red';
+            //element.style.margin = '10px';
+        } else {
+            element.style.border = '1px solid green';
+        }
+    });
+}
+
 function suma() {
     // lista inputów, lista wpisanych ocen
     let $inputs = document.querySelectorAll('.poleOceny');
     let $showValue = document.querySelector('.showValue');
     let $displayAverage = document.querySelector('.displayAverage');
     // wyśweietlenie konkretnego inputa (wartość oceny)
+    validation($inputs);
 
     let suma = 0;
     for (let i = 0; i < $inputs.length; i++) {
