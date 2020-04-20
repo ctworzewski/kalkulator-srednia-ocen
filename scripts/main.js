@@ -3,8 +3,27 @@ console.log('Działa');
 let $average = document.querySelector('.average');
 
 function suma() {
-    let $input = document.querySelectorAll('.poleOceny');
-    console.log($input[0].value);
+    // lista inputów, lista wpisanych ocen
+    let $inputs = document.querySelectorAll('.poleOceny');
+    let $showValue = document.querySelector('.showValue');
+
+    // wyśweietlenie konkretnego inputa (wartość oceny)
+    $showValue.textContent = $inputs[0].value;
+
+    // console.log($input[0].value);
+    let temp = 0;
+    for (let i = 0; i < $inputs.length; i++) {
+        temp = temp + Number($inputs[i].value);
+        console.log(temp);
+
+        // console.log($input[i].value);
+    }
+    /*   let suma = 0;
+    $inputs.forEach((item) => {
+        suma = suma + Number(item.value);
+        console.log(">>" + suma);
+    });
+ */
 }
 
 
